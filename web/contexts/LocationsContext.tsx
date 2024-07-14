@@ -1,8 +1,9 @@
 "use client"
 
-import { ILocation } from "@/DTOs/ILocation";
+import { ILocation } from "@/dtos/ILocation";
 import { api } from "@/services/api";
 import { createContext, ReactNode, useEffect, useState } from "react";
+import { toast } from 'react-toastify';
     
 export type LocationInput = Omit<ILocation, 'id' | 'created_at'>;
     
@@ -36,15 +37,10 @@ export function LocationsProvider({ children }: LocationsProviderProps) {
       
     } catch (error) {
       console.error("Failed to fetch Locations:", error);
-      // Handle the error as needed, e.g., show a toast message
-      // const isAppError = error instanceof AppError;
-      // const title = isAppError ? error.message : 'Não foi possível buscar as informações. Tente novamente mais tarde.'
-  
-      // toast.show({
-      //     title,
-      //     placement: 'top',
-      //     bgColor: 'red.500'
-      // })
+    
+      toast.error("Não foi possível buscar as informações. Tente novamente mais tarde.", {
+        position: "top-right"
+      });
     }
   }
 

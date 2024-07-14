@@ -1,4 +1,4 @@
-import { ILocation } from "@/DTOs/ILocation";
+import { ILocation } from "@/dtos/ILocation";
 import Image from "next/image";
 import { FaTrashAlt } from "react-icons/fa";
 
