@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { IProduct } from "@/contexts/ProductsContext"
 import Image from "next/image";
 import { FaTrashAlt } from "react-icons/fa";
@@ -8,6 +9,8 @@ interface ProductProps extends IProduct {
 }
 
 export function Product({ id, name, quantity = 1, done = false, category, priceJPY, unit, onDelete, onToggleDone }:ProductProps) {
+  const [imageSrc, setImageSrc] = useState(`/images/${name}.png`);
+
   const doneImageStyle = done ? "brightness-50" : "";
   const doneTextStyle = done ? "line-through decoration-slate-300 text-slate-500" : "text-black dark:text-white";
 
@@ -19,16 +22,19 @@ export function Product({ id, name, quantity = 1, done = false, category, priceJ
     onToggleDone(id);
   };
 
-  const imageName = name;
+  function handleImageError() {
+    setImageSrc('/images/no-image.png');
+  }
 
   return (
     <div className="flex items-center justify-between w-full gap-1 p-1 bg-slate-200: dark:bg-slate-800">
       <Image 
-        src={`/images/${imageName}.png`} 
+        src={imageSrc} 
         alt="" 
         width={40} 
         height={40} 
         className={`bg-white/50 dark:bg-black/50 aspect-square object-cover rounded-full ${doneImageStyle}`}
+        onError={handleImageError}
       />
       <div
         onClick={handleToggleDone}
