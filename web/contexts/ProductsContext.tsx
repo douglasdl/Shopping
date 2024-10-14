@@ -51,15 +51,6 @@ export function ProductsProvider({ children }: ProductsProviderProps) {
       
     } catch (error) {
       console.error("Failed to fetch products:", error);
-      // Handle the error as needed, e.g., show a toast message
-      // const isAppError = error instanceof AppError;
-      // const title = isAppError ? error.message : 'Não foi possível buscar as informações. Tente novamente mais tarde.'
-  
-      // toast.show({
-      //     title,
-      //     placement: 'top',
-      //     bgColor: 'red.500'
-      // })
     }
   }
 
@@ -77,15 +68,6 @@ export function ProductsProvider({ children }: ProductsProviderProps) {
       setCartProducts(cartProducts);
     } catch (error) {
       console.error("Failed to fetch products:", error);
-      // Handle the error as needed, e.g., show a toast message
-      // const isAppError = error instanceof AppError;
-      // const title = isAppError ? error.message : 'Não foi possível buscar as informações. Tente novamente mais tarde.'
-  
-      // toast.show({
-      //     title,
-      //     placement: 'top',
-      //     bgColor: 'red.500'
-      // })
     }
   }
   

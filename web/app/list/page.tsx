@@ -7,7 +7,7 @@ import { useProducts } from "@/hooks/useProducts";
 import { useEffect, useMemo, useState } from "react";
 
 export default function List() {
-  const { products, listProducts, cartProducts, addProduct, deleteProduct, toggleDone } = useProducts();
+  const { listProducts, cartProducts, addProduct, deleteProduct, toggleDone } = useProducts();
   const [newProduct, setNewProduct] = useState("");
 
   function handleAddProduct() {

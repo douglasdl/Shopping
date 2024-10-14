@@ -1,19 +1,16 @@
-import { Product } from "@/components/Product";
-import { useProducts } from "@/hooks/useProducts";
+import { Header } from "@/components/Header";
+// import { Product } from "@/components/Product";
+// import { useProducts } from "@/hooks/useProducts";
 
 export default function ProductsPage() {
-  const { products } = useProducts();
+  // const { products } = useProducts();
 
   return (
     <div>
-      <header>
-        <h2 className="flex items-center justify-between p-2 font-bold bg-slate-200 text-black w-full rounded-t-md">
-          Produtos
-          <span></span>
-        </h2>
-      </header>
+      <Header title="Produtos" />
+      
       <main>
-        {
+        {/* {
           products.map((product) => {
             // id, quantity, unit, name[], country, category, barcode, maker_id
             return (
@@ -32,7 +29,7 @@ export default function ProductsPage() {
               />
             )
           })
-        }
+        } */}
       </main>
     </div>
   )

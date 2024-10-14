@@ -9,9 +9,9 @@ export default function SuperMarkets() {
   const { locations } = useLocations();
 
   return (
-    <div className="flex min-h-screen flex-col items-center justify-start w-full p-8">
+    <div className="flex min-h-screen flex-col items-center justify-start w-full p-8 ">
       <Header title="Supermercados" />
-      <div className="flex flex-col gap-1 p-4">
+      <div className="flex flex-col gap-1 p-4 w-full max-w-3xl">
         {
           locations.length > 0 && (
             locations.map((location) => {

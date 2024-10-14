@@ -26,7 +26,7 @@ export function Location({ id, name, address, onDelete, onToggleDone }:LocationP
         <span className={`text-base font-bold capitalize truncate text-black dark:text-white`}>
           {name}
         </span>
-        <span className={`flex items-center justify-center text-xs truncate text-black dark:text-white`}>
+        <span className={`flex items-center justify-start text-xs truncate text-black dark:text-white`}>
           {address}
         </span>
       </div>

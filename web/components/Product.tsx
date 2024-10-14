@@ -1,3 +1,5 @@
+"use client"
+
 import { useState } from 'react';
 import { IProduct } from "@/contexts/ProductsContext"
 import Image from "next/image";
